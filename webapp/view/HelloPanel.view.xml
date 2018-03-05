@@ -8,6 +8,10 @@ xmlns:mvc="sap.m.core.mvc">
 		width="auto">
 		<content>
 			<Button
+				text="{i18n>openDialogButtonText}"
+				press="onOpenDialog"
+				class="sapUiSmallMarginEnd"/>
+			<Button
 				text="{i18n>click}"
 				press="showHello"
 				class="myCustomButton sapUiSmallMarginEnd"/>

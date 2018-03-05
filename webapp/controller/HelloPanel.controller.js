@@ -15,6 +15,22 @@ sap.ui.define([
 				width: "20em",
 				at: "center"
 			});
-		}             
+		},
+		onOpenDialog: function(){
+			var oView = this.getView();
+			var oDialog = oView.byId("helloDialog");
+			//create oDialog lazily if oDialog don't exist this is called
+			if(!oDialog){
+			//create dialog via fragment fatory "this" part is missing in the documentation
+			oDialog = sap.ui.xmlfragment(oView.getId(), "sap.ui.demo.walkthrough.view.HelloDialog", this);
+			//always use addDependent to connect dialog to lifecycle management and databinding of view
+			oView.addDependent(oDialog);
+			}
+			
+			oDialog.open();
+		},
+		onCloseDialog: function(){
+			this.byId("helloDialog").close();
+		}
 	});
 });
