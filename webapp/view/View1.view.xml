@@ -7,6 +7,12 @@
 	<App class="myAppDemoWT">
 		<pages>
 			<Page title="{i18n>homePageTitle}" class="sapUiResponsivePadding">
+				<headerContent>
+					<Button
+						icon="sap-icon://action-settings"
+						press="onOpenDialog">
+					</Button>
+				</headerContent>
 				<content>
 					<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel" />
 				</content>
