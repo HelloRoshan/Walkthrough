@@ -7,7 +7,8 @@
 			    	"pages": 226,
 			    	"title": "Pride and Prejudice",
 			    	"year": 1813,
-					"price": 300
+					"price": 300,
+					"Status": "A"
 			    },
 			    {
 			    	"author": "Albert Camus",
@@ -16,7 +17,8 @@
 			    	"pages": 185,
 			    	"title": "The Stranger",
 			    	"year": 1942,
-			    	"price": 400
+			    	"price": 400,
+			    	"Status": "A"
 			    },
 			    {
 			    	"author": "Anton Chekhov",
@@ -25,16 +27,18 @@
 			    	"pages": 194,
 			    	"title": "Stories",
 			    	"year": 1886,
-			    	"price": 500
+			    	"price": 500,
+			    	"Status": "B"
 			    },
 			    {
 			    	"author": "Charles Dickens",
 			    	"country": "United Kingdom",
-			 	"language": "English",  
+			 		"language": "English",  
 			    	"pages": 194,
 			    	"title": "Great Expectations",
 			    	"year": 1861,
-			    	"price": 600
+			    	"price": 600,
+			    	"Status": "A"
 			    },
 			    {
 			    	"author": "Ernest Hemingway",
@@ -43,7 +47,8 @@
 			    	"pages": 128,
 			    	"title": "The Old Man and the Sea",
 			    	"year": 1952,
-			    	"price": 700
+			    	"price": 700,
+			    	"Status": "C"
 			    },
 			    {
 			    	"author": "Homer",
@@ -52,7 +57,8 @@
 			    	"pages": 374,
 			    	"title": "Odyssey",
 			    	"year": -800,
-			    	"price": 600
+			    	"price": 600,
+			    	"Status": "B"
 			    },
 			    {
 			    	"author": "Franz Kafka",
@@ -61,7 +67,8 @@
 			    	"pages": 488,
 			    	"title": "Stories",
 			    	"year": 1924,
-			    	"price": 500
+			    	"price": 500,
+			    	"Status": "A"
 			    },
 			    {
 			    	"author": "George Orwell",
@@ -70,7 +77,8 @@
 			    	"pages": 272,
 			    	"title": "Nineteen Eighty-Four",
 			    	"year": 1949,
-			    	"price": 300
+			    	"price": 300,
+			    	"Status": "B"
 			    }
 		]
 }

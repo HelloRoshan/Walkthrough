@@ -17,7 +17,13 @@
 						showMeasure: false
 					}
 				}"
-				numberUnit="{view>/currency}">
+				numberUnit="{view>/currency}"
+				numberState="{= ${book>price}>500 ?'Error' : 'Success' }">
+				<firstStatus>
+					<ObjectStatus text="{
+						path: 'book>Status',
+						formatter: '.formatter.statusText' }" />
+				</firstStatus>
 			</ObjectListItem>
 		</items>
 	</List>
