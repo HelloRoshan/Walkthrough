@@ -6,7 +6,7 @@
 		title="Hello {/recipient/name}">
 		<content>
 			<core:Icon
-				src="sap-icon://paper-plane"
+				src="sap-icon://education"
 				size="8rem"
 				class="sapUiMediumMargin">
 			</core:Icon>

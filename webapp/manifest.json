@@ -66,6 +66,10 @@
 				"settings": {
 					"bundleName": "sap.ui.demo.walkthrough.i18n.i18n"
 				}
+			},
+			"book":{
+			"type": "sap.ui.model.json.JSONModel",
+			"uri": "Books.json"
 			}
 		},
 		"resources": {

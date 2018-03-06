@@ -18,7 +18,7 @@ sap.ui.define([
 			//set data model
 			var oData = {
 				recipient: {
-					name: "Roshan"
+					name: "Reader"
 				}
 				
 			};

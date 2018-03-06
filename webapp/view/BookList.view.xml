@@ -1,0 +1,15 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<List
+		headerText = "{i18n>bookListTitle}"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		items="{book>/Books}">
+		<items>
+			<ObjectListItem
+				title = "{book>title}">
+			</ObjectListItem>
+		</items>
+	</List>
+</mvc:View>
