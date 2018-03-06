@@ -8,6 +8,7 @@ xmlns:mvc="sap.m.core.mvc">
 		width="auto">
 		<content>
 			<Button
+				icon="sap-icon://touch"
 				text="{i18n>openDialogButtonText}"
 				press="onOpenDialog"
 				class="sapUiSmallMarginEnd"/>
