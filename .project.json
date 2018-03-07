@@ -45,5 +45,12 @@
     "targetFolder": "dist",
     "excludedFolders": [],
     "excludedFiles": []
+  },
+  "mockpreview": {
+    "loadJSONFiles": true,
+    "mockUri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+    "metadataFilePath": "../localService/metadata.xml",
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
   }
 }

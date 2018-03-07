@@ -1,13 +1,12 @@
 sap.ui.define([
-		'sap/ui/core/util/MockServer'
+	"sap/ui/core/util/MockServer"
 ], function(MockServer) {
 	"use strict";
-	
 	return {
 		init: function(){
 			//create
 			var oMockServer = new MockServer({
-				rootUri: "/destinations/northwind/V2/Northwind/Northwind.svc"
+				rootUri: "/destinations/northwind/V2/Northwind/Northwind.svc/"
 			});
 			var oUriParameters = jQuery.sap.getUriParameters();
 			//configure
