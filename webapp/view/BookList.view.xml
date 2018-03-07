@@ -3,22 +3,35 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<List
-		headerText = "{i18n>bookListTitle}"
+		id="bookList"
 		class="sapUiResponsiveMargin"
 		width="auto"
-		items="{book>/Books}">
+		items="{
+			path: 'book>/Invoices',
+			sorter: {
+				path: 'ShipperName',
+				group: true
+				}
+			}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>bookListTitle}"></Title>
+				<ToolbarSpacer />
+				<SearchField width="50%" search = "onFilterBooks" />
+			</Toolbar>
+		</headerToolbar>
 		<items>
 			<ObjectListItem
-				title = "{book>title}"
+				title = "{book>Quantity} x {book>ProductName}"
 				number="{
-					parts: [{path: 'book>price'}, {path: 'view>/currency'}],
+					parts: [{path: 'book>ExtendedPrice'}, {path: 'view>/currency'}],
 					type: 'sap.ui.model.type.Currency',
 					formatOptions: {
 						showMeasure: false
 					}
 				}"
 				numberUnit="{view>/currency}"
-				numberState="{= ${book>price}>500 ?'Error' : 'Success' }">
+				numberState="{= ${book>ExtendedPrice}>50 ?'Error' : 'Success' }">
 				<firstStatus>
 					<ObjectStatus text="{
 						path: 'book>Status',

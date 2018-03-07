@@ -20,6 +20,14 @@
         "version": "1.52.7"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+    	"path": "/destinations/northwind",
+    	"target": {
+    		"type": "destination",
+    		"name": "northwind"
+    	},
+    	"description": "Northwind OData Service"
     }
   ],
   "sendWelcomeFileRedirect": true

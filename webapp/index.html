@@ -19,9 +19,6 @@
 			}'>
 		</script>
 		<script>
-			sap.ui.core.BusyIndicator.show("Loading");
-		</script>
-		<script>
 		//will run funtion after all UI5 resources and libraries are loaded
 			sap.ui.getCore().attachInit(function(){
 				new sap.m.Shell({
@@ -35,9 +32,7 @@
 				}).placeAt("content");
 			});
 		</script>
-		<script>
-			sap.ui.core.BusyIndicator.hide();
-		</script>
+
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>

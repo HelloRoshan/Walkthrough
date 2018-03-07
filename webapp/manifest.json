@@ -12,6 +12,15 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
+		},
+		"dataSources": {
+			"bookRemote": {
+				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
 		}
 	},
 
@@ -68,8 +77,7 @@
 				}
 			},
 			"book":{
-			"type": "sap.ui.model.json.JSONModel",
-			"uri": "Books.json"
+				"dataSource": "bookRemote"
 			}
 		},
 		"resources": {
