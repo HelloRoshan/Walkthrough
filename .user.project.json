@@ -1,6 +1,23 @@
 {
   "run": [
     {
+      "filePath": "/webapp/test/integration/opaTests.qunit.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "workspace": "withoutWorkspace",
+      "urlParameters": [],
+      "backendSystem": [],
+      "_metadata": {
+        "runnerId": "qunitrunner",
+        "id": 416679,
+        "displayName": "Run opaTests.qunit.html",
+        "lastRunTimeStamp": 1520485148469
+      }
+    },
+    {
       "filePath": "/webapp/test/unit/unitTests.quint.html",
       "previewMode": 1,
       "dataMode": 1,
