@@ -34,6 +34,9 @@ sap.ui.define([
 			
 			//set dialog and private function start with underscore 
 			this._helloDialog = new HelloDialog(this.getRootControl());
+			
+			//create the view based on url/hash
+			this.getRouter().initialize();
 		},
 		exit: function(){
 			this._helloDialog.destroy();

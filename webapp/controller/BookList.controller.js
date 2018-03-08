@@ -27,6 +27,10 @@ sap.ui.define([
 			var oList = this.byId("bookList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
+		},
+		onPress: function(oEvent){
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("detail");
 		}
 	});
 });

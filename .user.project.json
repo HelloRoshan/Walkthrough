@@ -1,6 +1,24 @@
 {
   "run": [
     {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 5715368,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html",
+        "lastRunTimeStamp": 1520488659865
+      }
+    },
+    {
       "filePath": "/webapp/test/integration/opaTests.qunit.html",
       "previewMode": 1,
       "dataMode": 1,
@@ -14,7 +32,7 @@
         "runnerId": "qunitrunner",
         "id": 416679,
         "displayName": "Run opaTests.qunit.html",
-        "lastRunTimeStamp": 1520485148469
+        "lastRunTimeStamp": 1520485817997
       }
     },
     {
@@ -32,24 +50,6 @@
         "id": 1204890,
         "displayName": "Run unitTests.quint.html",
         "lastRunTimeStamp": 1520483611649
-      }
-    },
-    {
-      "filePath": "/webapp/index.html",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": null,
-      "ui5VerSource": null,
-      "isDefaultVersion": 0,
-      "urlParameters": [],
-      "hashParameter": "",
-      "backendSystem": [],
-      "_metadata": {
-        "id": 5715368,
-        "runnerId": "webapprunner",
-        "displayName": "Run index.html",
-        "lastRunTimeStamp": 1520481287067
       }
     },
     {

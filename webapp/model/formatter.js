@@ -6,11 +6,11 @@ sap.ui.define([], function() {
 			var resourceBundle = this.getView().getModel("i18n").getResourceBundle();
 			switch(sStatus) {
 				case "A":
-					return resourceBundle.getText("bookStatusA");
+					return resourceBundle.getText("invoiceStatusA");
 				case "B":
-					return resourceBundle.getText("bookStatusB");
+					return resourceBundle.getText("invoiceStatusB");
 				case "C":
-					return resourceBundle.getText("bookStatusC");
+					return resourceBundle.getText("invoiceStatusC");
 				default:
 					return sStatus;
 			}

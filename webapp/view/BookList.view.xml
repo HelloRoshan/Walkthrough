@@ -15,7 +15,7 @@
 			}">
 		<headerToolbar>
 			<Toolbar>
-				<Title text="{i18n>bookListTitle}"></Title>
+				<Title text="{i18n>invoiceListTitle}"></Title>
 				<ToolbarSpacer />
 				<SearchField width="50%" search = "onFilterBooks" />
 			</Toolbar>
@@ -31,7 +31,9 @@
 					}
 				}"
 				numberUnit="{view>/currency}"
-				numberState="{= ${book>ExtendedPrice}>50 ?'Error' : 'Success' }">
+				numberState="{= ${book>ExtendedPrice}>50 ?'Error' : 'Success' }"
+				type="Navigation"
+				press="onPress">
 				<firstStatus>
 					<ObjectStatus text="{
 						path: 'book>Status',
