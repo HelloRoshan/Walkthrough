@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Unit tests for walkthrough</title>
+		<meta http-equiv ="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<script id="sap-ui-bootstrap"
+			src="/resources/sap-ui-core.js"
+			data-sap-ui-resourceroots= '{
+				"sap.ui.demo.walkthrough": "../../",
+				"test.unit": "./"
+			}'></script>
+			<script>
+				jQuery.sap.require("sap.ui.qunit.qunit-css");
+				jQuery.sap.require("sap.ui.thirdparty.qunit");
+				jQuery.sap.require("sap.ui.qunit.qunit-junit");
+				jQuery.sap.require("sap.ui.qunit.qunit-coverage");
+				// model tests
+				jQuery.sap.require("test.unit.model.formatter");
+			</script>
+	</head>
+	<body>
+		<div id="content"></div>
+		<h1 id="qunit-header">Unit tests for walkthrough</h1>
+		<h2 id="quint-banner"></h2>
+		<h2 id="quint-userAgent"></h2>
+		<div id="qunit-testrunner-toolbar"></div>
+		<ol id="qunit-tests"></ol>
+		<div id="qunit-fixture"></div>
+	</body>
+</html>
