@@ -8,8 +8,29 @@
 		showNavButton="true"
 		navButtonPress="onNavPress">
 		<ObjectHeader
+			responsive="true"
+			fullScreenOptimized="true"
+			number="{
+				parts: [{path: 'book>ExtendedPrice'}, {path: 'view>/currency'}],
+				type: 'sap.m.model.type.Currency',
+				formatOptions:{
+					showMeasure: false
+					}
+				}"
+				numberUnit ="{view>/currency}"
 			intro="{book>ShipperName}"
-			title="{book>ProductName}"></ObjectHeader>
+			title="{book>ProductName}">
+				<attributes>
+					<ObjectAttribute title="{i18n>quantityTitle}" text="{book>Quantity}"></ObjectAttribute>
+					<ObjectAttribute title="{i18n>dateTitle}" text="{
+						path: 'book>ShippedDate',
+						type: 'sap.ui.model.type.Date',
+						formatOptions:{
+							style: 'long',
+							source: {
+								pattern: 'yyyy-mm-ddTHH:mm:ss'}}}"></ObjectAttribute>
+				</attributes>
+		</ObjectHeader>
 		<wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change="onRatingChange" />
 	</Page>
 </mvc:View>
