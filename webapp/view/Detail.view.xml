@@ -2,7 +2,8 @@
 	controllerName="sap.ui.demo.walkthrough.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:wt="sap.ui.demo.walkthrough.control">
+	xmlns:wt="sap.ui.demo.walkthrough.control"
+	xmlns:form="sap.ui.layout.form">
 	<Page
 		title="{i18n>detailPageTitle}"
 		showNavButton="true"
@@ -27,10 +28,36 @@
 						type: 'sap.ui.model.type.Date',
 						formatOptions:{
 							style: 'long',
-							source: {
-								pattern: 'yyyy-mm-ddTHH:mm:ss'}}}"></ObjectAttribute>
+							pattern: 'yyyy/MM/ddTHH:mm:ss'}}"></ObjectAttribute>
 				</attributes>
 		</ObjectHeader>
 		<wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change="onRatingChange" />
+		<Panel class="sapUiNoContentPadding" headerText="{i18n>SupplierTabTitle}">
+			<content>
+				<form:SimpleForm
+					minWidth="1024"
+					maxContainerCols="2"
+					editable="false"
+					layout="ResponsiveGridLayout"
+					labelSpanL="3"
+					labelSpanM="3"
+					emptySpanL="4"
+					emptySpanM="4"
+					columnsL="1"
+					columnsM="1">
+					<form:content>
+						<Label text="{i18n>oSupplierName}"></Label>
+						<Text text="{book>ShipName}"></Text>
+						<Label text="{i18n>oSupplierAddress}"></Label>
+						<Text text="{book>ShipAddress}"></Text>
+						<Label text="{i18n>oSupplierZipCode} / {i18n>oSupplierRegion}"></Label>
+						<Text text="{book>ShipPostalCode} / {book>ShipRegion}"></Text>
+						<Label text="{i18n>oSupplierCountry}"></Label>
+						<Text text="{book>ShipCountry}"></Text>
+					</form:content>
+				</form:SimpleForm>
+			</content>
+			
+		</Panel>
 	</Page>
 </mvc:View>

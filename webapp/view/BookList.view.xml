@@ -9,8 +9,7 @@
 		items="{
 			path: 'book>/Invoices',
 			sorter: {
-				path: 'ShipperName',
-				group: true
+				path: 'ShipperName'
 				}
 			}">
 		<headerToolbar>

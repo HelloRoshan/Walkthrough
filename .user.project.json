@@ -1,6 +1,24 @@
 {
   "run": [
     {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 5715368,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html",
+        "lastRunTimeStamp": 1520577742339
+      }
+    },
+    {
       "filePath": "/webapp/test/mockServer.html",
       "previewMode": 1,
       "dataMode": 1,
@@ -14,7 +32,7 @@
         "id": 6748732,
         "runnerId": "qunitrunner",
         "displayName": "Run mockServer.html",
-        "lastRunTimeStamp": 1520509769050
+        "lastRunTimeStamp": 1520576038248
       }
     },
     {
@@ -32,24 +50,6 @@
         "id": 397957,
         "displayName": "Run index.html 1",
         "lastRunTimeStamp": 1520507977051
-      }
-    },
-    {
-      "filePath": "/webapp/index.html",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": null,
-      "ui5VerSource": null,
-      "isDefaultVersion": 0,
-      "urlParameters": [],
-      "hashParameter": "",
-      "backendSystem": [],
-      "_metadata": {
-        "id": 5715368,
-        "runnerId": "webapprunner",
-        "displayName": "Run index.html",
-        "lastRunTimeStamp": 1520507559347
       }
     },
     {

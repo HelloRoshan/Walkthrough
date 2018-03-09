@@ -11,6 +11,13 @@
 		</headerContent>
 		<content>
 			<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel" />
+			<Carousel
+			height="446px"
+			width="1129px">
+				<pages>
+					<Image id="img1" src="assets/image_1.png"></Image>
+				</pages>
+			</Carousel>
 			<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.BookList" />
 		</content>
 	</Page> 
