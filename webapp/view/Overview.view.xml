@@ -1,7 +1,8 @@
 <mvc:View
 	controllerName="sap.ui.demo.walkthrough.controller.View1"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="{i18n>homePageTitle}" class="sapUiResponsivePadding">
 		<headerContent>
 			<Button
@@ -11,13 +12,6 @@
 		</headerContent>
 		<content>
 			<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel" />
-			<Carousel
-			height="446px"
-			width="1129px">
-				<pages>
-					<Image id="img1" src="assets/image_1.png"></Image>
-				</pages>
-			</Carousel>
 			<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.BookList" />
 		</content>
 	</Page> 
