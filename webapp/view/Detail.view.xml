@@ -2,9 +2,7 @@
 	controllerName="sap.ui.demo.walkthrough.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:wt="sap.ui.demo.walkthrough.control"
-	xmlns:form="sap.ui.layout.form"
-	xmlns:l="sap.ui.layout">
+	xmlns:wt="sap.ui.demo.walkthrough.control">
 	<Page
 		title="{i18n>detailPageTitle}"
 		showNavButton="true"
@@ -13,71 +11,20 @@
 			responsive="true"
 			fullScreenOptimized="true"
 			number="{
-				parts: [{path: 'book>ExtendedPrice'}, {path: 'view>/currency'}],
-				type: 'sap.m.model.type.Currency',
-				formatOptions:{
+				parts: [{path: 'book>price'}, {path: 'view>/currency'}],
+				type: 'sap.ui.model.type.Currency',
+				formatOptions: {
 					showMeasure: false
-					}
-				}"
-				numberUnit ="{view>/currency}"
-			intro="{book>ShipperName}"
-			title="{book>ProductName}">
-				<attributes>
-					<ObjectAttribute title="{i18n>quantityTitle}" text="{book>Quantity}"></ObjectAttribute>
-					<ObjectAttribute title="{i18n>dateTitle}" text="{
-						path: 'book>ShippedDate',
-						type: 'sap.ui.model.type.Date',
-						formatOptions:{
-							style: 'long',
-							pattern: 'yyyy/MM/ddTHH:mm:ss'}}"></ObjectAttribute>
-				</attributes>
+				}
+			}"
+			numberUnit="{view>/currency}"
+			intro="{book>author}"
+			title="{book>title}">
+			<attributes>
+				<ObjectAttribute title="{i18n>authorTitle}" text="{book>author}"/>
+				<ObjectAttribute title="{i18n>dateTitle}" text="{book>year}"/>
+			</attributes>
 		</ObjectHeader>
 		<wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change="onRatingChange" />
-		<l:DynamicSideContent>
-			<l:mainContent>
-				<Panel class="sapUiNoContentPadding" headerText="{i18n>SupplierTabTitle}">
-					<content>
-						<form:SimpleForm
-							minWidth="1024"
-							maxContainerCols="2"
-							editable="false"
-							layout="ResponsiveGridLayout"
-							labelSpanL="3"
-							labelSpanM="3"
-							emptySpanL="4"
-							emptySpanM="4"
-							columnsL="1"
-							columnsM="1">
-							<form:content>
-								<Label text="{i18n>oSupplierName}"></Label>
-								<Text text="{book>ShipName}"></Text>
-								<Label text="{i18n>oSupplierAddress}"></Label>
-								<Text text="{book>ShipAddress}"></Text>
-								<Label text="{i18n>oSupplierZipCode} / {i18n>oSupplierRegion}"></Label>
-								<Text text="{book>ShipPostalCode} / {book>ShipRegion}"></Text>
-								<Label text="{i18n>oSupplierCountry}"></Label>
-								<Text text="{book>ShipCountry}"></Text>
-							</form:content>
-						</form:SimpleForm>
-					</content>
-				</Panel>
-			</l:mainContent>
-			<l:sideContent>
-				<Toolbar>
-					<Title text="Comments" />
-					<ToolbarSpacer />
-					<Button text="Close" type="Transparent" press="handleSideContentHide" />
-				</Toolbar>
-				<l:VerticalLayout width="100%">
-					<l:content>
-						<List>
-							<FeedListItem></FeedListItem>
-						</List>
-						
-						<FeedInput showIcon="true" icon="http://upload.wikimedia.org/wikipedia/commons/2/25/George_Washington_as_CIC_of_the_Continental_Army_bust.jpg" />
-					</l:content>
-				</l:VerticalLayout>
-			</l:sideContent>
-		</l:DynamicSideContent>
 	</Page>
 </mvc:View>

@@ -4,46 +4,51 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	<Table
 		id="bookList"
-		class="sapUiResponsiveMargin"
-		width="auto"
 		items="{
-			path: 'book>/Invoices',
+			path: 'book>/Books',
 			sorter: {
-				path: 'ShipperName'
+				path: 'title',
+				group: false
 				}
-			}">
+		}">
 		<headerToolbar>
 			<Toolbar>
-				<Title text="{i18n>invoiceListTitle}"></Title>
+				<Title text="{i18n>bookListTitle}"></Title>
 				<ToolbarSpacer />
 				<SearchField width="50%" search = "onFilterBooks" />
 			</Toolbar>
 		</headerToolbar>
-		
 		<columns>
 			<Column
-				hAlign="End"
+				hAlign="Begin"
 				minScreenWidth="Small"
-				demandPopin="true"
-				width="4em">
-				<Text text="{i18n>columnQuantity}"></Text>
+				width="auto">
+				<Text text="{i18n>bookTitle}" />
 			</Column>
 			<Column>
-				<Text text="{i18n>columnName}"></Text>
+				<Text text="{i18n>bookAuthor}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>bookLanguage}" />
 			</Column>
 			<Column
 				minScreenWidth="Small"
 				demandPopin="true">
-				<Text text="{i18n>columnStatus}"></Text>
+				<Text text="{i18n>bookPages}" />
 			</Column>
 			<Column
 				minScreenWidth="Tablet"
-				demandPopin="false">
-				<Text text="{i18n>columnSupplier}"></Text>
+				demandPopin="true">
+				<Text text="{i18n>bookYear}" />
+			</Column>
+			<Column
+				minScreenWidth="Small"
+				demandPopin="true">
+				<Text text="{i18n>bookStatus}" />
 			</Column>
 			<Column
 				hAlign="End">
-				<Text text="{i18n>columnPrice}"></Text>
+				<Text text="{i18n>bookPrice}" />
 			</Column>
 		</columns>
 		<items>
@@ -51,23 +56,25 @@
 			type="Navigation"
 			press="onPress">
 				<cells>
-					<ObjectNumber number="{book>Quantity}" emphasized="false" />
-					<ObjectIdentifier title="{book>ProductName}" />
-					<ObjectStatus text="{
+					<ObjectIdentifier title="{book>title}" />
+					<Text text="{book>author}" />
+					<Text text="{book>language}" />
+					<Text text="{book>pages}" />
+					<Text text="{book>year}" />
+					<Text text="{
 						path: 'book>Status',
 						formatter: '.formatter.statusText'
-						}" />
-					<Text text="{book>ShipperName}" />
+						}"/>
 					<ObjectNumber
 						number="{
-							parts: [{path: 'book>ExtendedPrice'}, {path: 'view>/currency'}],
+							parts: [{path: 'book>price'}, {path: 'view>/currency'}],
 							type: 'sap.ui.model.type.Currency',
-							formatOptions:{
+							formatOptions: {
 								showMeasure: false
-								}
-							}"
+							}
+						}"
 						unit="{view>/currency}"
-						state="{= $book>ExtendedPrice} > 50 ? 'Error': 'Success' }" />
+						state="{= ${book>price}>400 ?'Error' : 'Success' }" />
 				</cells>
 			</ColumnListItem>
 		</items>

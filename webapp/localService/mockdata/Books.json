@@ -1,5 +1,4 @@
-{
-	"Books": [
+[
 			    {
 			    	"author": "Jane Austen",
 			    	"country": "United Kingdom",
@@ -89,4 +88,3 @@
 					"cover_link" : ""
 			    }
 		]
-}

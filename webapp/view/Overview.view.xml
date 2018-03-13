@@ -1,8 +1,7 @@
 <mvc:View
 	controllerName="sap.ui.demo.walkthrough.controller.View1"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:mvc="sap.ui.core.mvc">
 	<Page title="{i18n>homePageTitle}" class="sapUiResponsivePadding">
 		<headerContent>
 			<Button

@@ -18,8 +18,7 @@
 				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
 				"type": "OData",
 				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
+					"odataVersion": "2.0"
 				}
 			}
 		}
@@ -78,7 +77,8 @@
 				}
 			},
 			"book":{
-				"dataSource": "bookRemote"
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Books.json"
 			}
 		},"routing":{
 			"config":{
@@ -95,7 +95,7 @@
 					"name": "overview",
 					"target": "overview"
 				},{
-					"pattern": "detail/{invoicePath}",
+					"pattern": "detail/{bookPath}",
 					"name": "detail",
 					"target": "detail"
 				}

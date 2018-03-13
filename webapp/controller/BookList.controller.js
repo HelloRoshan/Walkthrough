@@ -20,7 +20,7 @@ sap.ui.define([
 			var aFilter = [];
 			var sQuery = oEvent.getParameter("query");
 			if(sQuery) {
-				aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
+				aFilter.push(new Filter("title", FilterOperator.Contains, sQuery));
 			}
 			
 			//filter binding
@@ -32,7 +32,7 @@ sap.ui.define([
 			var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail", {
-				invoicePath: oItem.getBindingContext("book").getPath().substr(1)          
+				bookPath: encodeURIComponent(oItem.getBindingContext("book").getPath().substr(1))          
 			});
 		}
 	});
