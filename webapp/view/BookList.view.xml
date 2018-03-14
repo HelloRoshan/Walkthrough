@@ -2,81 +2,114 @@
 	controllerName="sap.ui.demo.walkthrough.controller.BookList" 
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Table
-		id="bookList"
-		items="{
-			path: 'book>/Books',
-			sorter: {
-				path: 'title',
-				group: false
-				}
-		}">
-		<headerToolbar>
-			<Toolbar>
-				<Title text="{i18n>bookListTitle}"></Title>
-				<ToolbarSpacer />
-				<SearchField width="50%" search = "onFilterBooks" />
-			</Toolbar>
-		</headerToolbar>
-		<columns>
-			<Column
-				hAlign="Begin"
-				minScreenWidth="Small"
-				width="auto">
-				<Text text="{i18n>bookTitle}" />
-			</Column>
-			<Column>
-				<Text text="{i18n>bookAuthor}" />
-			</Column>
-			<Column>
-				<Text text="{i18n>bookLanguage}" />
-			</Column>
-			<Column
-				minScreenWidth="Small"
-				demandPopin="true">
-				<Text text="{i18n>bookPages}" />
-			</Column>
-			<Column
-				minScreenWidth="Tablet"
-				demandPopin="true">
-				<Text text="{i18n>bookYear}" />
-			</Column>
-			<Column
-				minScreenWidth="Small"
-				demandPopin="true">
-				<Text text="{i18n>bookStatus}" />
-			</Column>
-			<Column
-				hAlign="End">
-				<Text text="{i18n>bookPrice}" />
-			</Column>
-		</columns>
+	<IconTabBar>
 		<items>
-			<ColumnListItem
-			type="Navigation"
-			press="onPress">
-				<cells>
-					<ObjectIdentifier title="{book>title}" />
-					<Text text="{book>author}" />
-					<Text text="{book>language}" />
-					<Text text="{book>pages}" />
-					<Text text="{book>year}" />
-					<Text text="{
-						path: 'book>Status',
-						formatter: '.formatter.statusText'
-						}"/>
-					<ObjectNumber
-						number="{
-							parts: [{path: 'book>price'}, {path: 'view>/currency'}],
-							type: 'sap.ui.model.type.Currency',
-							formatOptions: {
-								showMeasure: false
-							}
-						}"
-						unit="{view>/currency}"
-						state="{= ${book>price}>400 ?'Error' : 'Success' }" />
-				</cells>
-			</ColumnListItem>
+			<IconTabFilter
+						key="countall"
+						showAll="true"
+						count="{view>/countall}"
+						text="{i18n>FilterBooksAll}"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="bnew"
+						icon="sap-icon://message-success"
+						iconColor="Positive"
+						count="{view>/bnew}"
+						text="{i18n>FilterNew}"/>
+					<IconTabFilter
+						key="instock"
+						icon="sap-icon://message-information"
+						iconColor="Positive"
+						count="{view>/instock}"
+						text="{i18n>FilterInStock}"/>
+					<IconTabFilter
+						key="soldout"
+						icon="sap-icon://message-error"
+						iconColor="Negative"
+						count="{view>/soldout}"
+						text="{i18n>FilterSoldOut}"/>
 		</items>
-	</Table>
+		<content>
+			<Table
+				id="bookList"
+				class="sapUiNoMarginTop"
+				updateFinished="onUpdateFinished"
+				items="{
+					path: 'book>/Books',
+					sorter: {
+						path: 'title',
+						group: false
+						}
+				}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>bookListTitle}"></Title>
+						<ToolbarSpacer />
+						<SearchField width="50%" search = "onFilterBooks" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column
+						hAlign="Begin"
+						minScreenWidth="Small"
+						width="auto">
+						<Text text="{i18n>bookTitle}" />
+					</Column>
+					<Column>
+						<Text text="{i18n>bookAuthor}" />
+					</Column>
+					<Column>
+						<Text text="{i18n>bookLanguage}" />
+					</Column>
+					<Column
+						minScreenWidth="Small"
+						demandPopin="true">
+						<Text text="{i18n>bookPages}" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						demandPopin="true">
+						<Text text="{i18n>bookYear}" />
+					</Column>
+					<Column
+						minScreenWidth="Small"
+						demandPopin="true">
+						<Text text="{i18n>bookStatus}" />
+					</Column>
+					<Column
+						hAlign="End">
+						<Text text="{i18n>bookPrice}" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem
+					type="Navigation"
+					press="onPress">
+						<cells>
+							<ObjectIdentifier title="{book>title}" />
+							<Text text="{book>author}" />
+							<Text text="{book>language}" />
+							<Text text="{book>pages}" />
+							<Text text="{book>year}" />
+							<Text text="{
+								path: 'book>Status',
+								formatter: '.formatter.statusText'
+								}"/>
+							<ObjectNumber
+								number="{
+									parts: [{path: 'book>price'}, {path: 'view>/currency'}],
+									type: 'sap.ui.model.type.Currency',
+									formatOptions: {
+										showMeasure: false
+									}
+								}"
+								unit="{view>/currency}"
+								state="{= ${book>price}>400 ?'Error' : 'Success' }" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</IconTabBar>
+	
 </mvc:View>

@@ -11,9 +11,27 @@ sap.ui.define([
 		formatter: formatter,
 		onInit: function(){
 			var oViewModel = new JSONModel({
-				currency: "NPR"
+				currency: "NPR",
+				countall: 0,
+				bnew: 0,
+				instock: 0,
+				soldout: 0
 			});
 			this.getView().setModel(oViewModel, "view");
+			
+			//create an object of filters
+			this._mFilters = {
+				"countall": [],
+				"bnew": [ new sap.ui.model.Filter("BooksInStock", "GT", 10)],
+				"instock": [ new sap.ui.model.Filter("BooksInStock", "GT", 10)],
+				"soldout": [ new sap.ui.model.Filter("BooksInStock", "BT", 1, 10)]
+			};
+		},
+		onUpdateFinished: function(){
+			var oViewModel = this.getModel("view");
+			
+			//Get the count for all the books and set the value to 'countall' property
+			
 		},
 		onFilterBooks: function (oEvent) {
 			//build filter array
