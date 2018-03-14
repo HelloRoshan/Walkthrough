@@ -9,7 +9,8 @@
 			    	"year": 1813,
 					"price": 300,
 					"Status": "A",
-					"cover_link" : ""
+					"cover_link" : "http://classicalpoets.org/wp-content/uploads/2017/01/pride-and-prejudice-cover.jpg",
+					"publication": "Oxford Press"
 			    },
 			    {
 			    	"author": "Albert Camus",
@@ -20,7 +21,8 @@
 			    	"year": 1942,
 			    	"price": 400,
 			    	"Status": "A",
-					"cover_link" : ""
+					"cover_link" : "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F4fcb9dc28d6e307e58e013b977ee48ad.203x285x1.jpg",
+					"publication": ""
 			    },
 			    {
 			    	"author": "Anton Chekhov",
@@ -31,7 +33,8 @@
 			    	"year": 1886,
 			    	"price": 900,
 			    	"Status": "B",
-					"cover_link" : ""
+					"cover_link" : "https://images.gr-assets.com/books/1491936310l/5693.jpg",
+					"publication": ""
 			    },
 			    {
 			    	"author": "Charles Dickens",
@@ -42,7 +45,8 @@
 			    	"year": 1861,
 			    	"price": 600,
 			    	"Status": "A",
-					"cover_link" : ""
+					"cover_link" : "https://greatexpectationsnovel.weebly.com/uploads/2/3/0/1/2301863/936347_orig.jpg",
+					"publication": ""
 			    },
 			    {
 			    	"author": "Ernest Hemingway",
@@ -53,7 +57,8 @@
 			    	"year": 1952,
 			    	"price": 700,
 			    	"Status": "C",
-					"cover_link" : ""
+					"cover_link" : "https://i.pinimg.com/originals/3e/12/29/3e12299deeed8b5740893311331b42f4.png",
+					"publication": ""
 			    },
 			    {
 			    	"author": "Homer",
@@ -64,7 +69,8 @@
 			    	"year": -800,
 			    	"price": 600,
 			    	"Status": "B",
-					"cover_link" : ""
+					"cover_link" : "https://images-na.ssl-images-amazon.com/images/I/61VW7%2BRJkdL._SY344_BO1,204,203,200_.jpg",
+					"publication": ""
 			    },
 			    {
 			    	"author": "Franz Kafka",
@@ -75,7 +81,8 @@
 			    	"year": 1924,
 			    	"price": 500,
 			    	"Status": "A",
-					"cover_link" : ""
+					"cover_link" : "https://images.gr-assets.com/books/1171724346l/116512.jpg",
+					"publication": ""
 			    },
 			    {
 			    	"author": "George Orwell",
@@ -86,7 +93,8 @@
 			    	"year": 1949,
 			    	"price": 300,
 			    	"Status": "B",
-					"cover_link" : ""
+					"cover_link" : "https://www.penguin.co.uk/content/dam/catalogue/pim/editions/428/9780141036144/cover.jpg",
+					"publication": ""
 			    }
 		]
 }

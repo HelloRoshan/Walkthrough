@@ -2,7 +2,9 @@
 	controllerName="sap.ui.demo.walkthrough.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:wt="sap.ui.demo.walkthrough.control">
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:wt="sap.ui.demo.walkthrough.control"
+	xmlns:form="sap.ui.layout.form">
 	<Page
 		title="{i18n>detailPageTitle}"
 		showNavButton="true"
@@ -26,5 +28,58 @@
 			</attributes>
 		</ObjectHeader>
 		<wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change="onRatingChange" />
+		<Panel class="sapUiNoContentPadding" headerText="{i18n>bookTabTitle}">
+			<content>
+				<form:SimpleForm
+					minWidth="1024"
+					maxContainerCols="2"
+					editable="false"
+					layout="ResponsiveGridLayout"
+					labelSpanL="3"
+					labelSpanM="3"
+					emptySpanL="4"
+					emptySpanM="4"
+					columnsL="1"
+					columnsM="1">
+					<form:content>
+						<Label text="{i18n>opublication}"></Label>
+						<Text text="{book>publication}"></Text>
+						<Label text="{i18n>otitle}"></Label>
+						<Text text="{book>title}"></Text>
+						<Label text="{i18n>oauthor}"></Label>
+						<Text text="{book>author}"></Text>
+						<Label text="{i18n>olanguage}"></Label>
+						<Text text="{book>language}"></Text>
+						<Label text="{i18n>oyear}"></Label>
+						<Text text="{book>year}"></Text>
+					</form:content>
+				</form:SimpleForm>
+					<Image src="{book>cover_link}" alt="pride and prejudice" />
+			</content>
+		</Panel>
+		
+		<Panel
+			class="sapUiContentPadding"
+			headerText="{i18n>oCommentsTabTitle}">
+			<content>
+				<FeedInput post="onPost" />
+				<List
+					id="idCommentsList"
+					noDataText="{i18n>oCommentsNoData}"
+					showSeparators="Inner"
+					items = "{
+						path: 'bookFeedback>/bookComments',
+						sorter:{
+							path: 'date',
+							descending: true
+						}
+					}">
+					<FeedListItem
+						info="{bookFeedback>type}"
+						text="{bookFeedback>comment}"
+						timestamp="{bookFeedback>date}"/>
+				</List>
+			</content>
+		</Panel>
 	</Page>
 </mvc:View>
