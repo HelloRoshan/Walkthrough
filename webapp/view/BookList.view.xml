@@ -2,7 +2,11 @@
 	controllerName="sap.ui.demo.walkthrough.controller.BookList" 
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<IconTabBar>
+	<IconTabBar
+		id="iconTabBar"
+		select="onQuickFilter"
+		expandable="false"
+		applyContentPadding="false">
 		<items>
 			<IconTabFilter
 						key="countall"
