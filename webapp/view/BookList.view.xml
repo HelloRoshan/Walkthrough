@@ -37,6 +37,8 @@
 			<Table
 				id="bookList"
 				class="sapUiNoMarginTop"
+				width ="auto"
+				noDataText="{view>/NoDataText}"
 				updateFinished="onUpdateFinished"
 				items="{
 					path: 'book>/Books',
@@ -100,15 +102,10 @@
 								formatter: '.formatter.statusText'
 								}"/>
 							<ObjectNumber
+								unit="NPR"
 								number="{
-									parts: [{path: 'book>price'}, {path: 'view>/currency'}],
-									type: 'sap.ui.model.type.Currency',
-									formatOptions: {
-										showMeasure: false
-									}
-								}"
-								unit="{view>/currency}"
-								state="{= ${book>price}>400 ?'Error' : 'Success' }" />
+									path: 'book>price'
+									}" />
 						</cells>
 					</ColumnListItem>
 				</items>

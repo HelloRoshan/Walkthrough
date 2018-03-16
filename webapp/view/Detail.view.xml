@@ -77,8 +77,12 @@
 					<FeedListItem
 						info="{bookFeedback>type}"
 						text="{bookFeedback>comment}"
-						timestamp="{bookFeedback>date}"/>
+						timestamp="{bookFeedback>date}"
+						showIcon="true"
+						icon="https://www.atomix.com.au/media/2015/06/atomix_user31.png"/>
+					
 				</List>
+				
 			</content>
 		</Panel>
 	</Page>

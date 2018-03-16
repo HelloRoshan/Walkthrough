@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/demo/walkthrough/model/formatter",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function(Controller, JSONModel, formatter, Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	"sap/ui/model/resource/ResourceModel"
+], function(Controller, JSONModel, formatter, Filter, FilterOperator, ResourceModel) {
 	"use strict";
 	
 	return Controller.extend("sap.ui.demo.walkthrough.controller.BookList", {
@@ -12,62 +13,77 @@ sap.ui.define([
 		onInit: function(){
 			var oTable = this.byId("bookList");
 			this._oTable = oTable;
-			//keeps the search state
-			this._oTableSearchState = [];
+			
+			//set i18n model on view
+			var i18nModel = new ResourceModel({
+				bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
+			});
+			this.getView().setModel(i18nModel,"i18n");
+			
 			var oViewModel = new JSONModel({
-				currency: "NPR",
+				bookListTitle: this.getView().getModel("i18n").getResourceBundle().getText("bookListTitle"),
+				NoDataText: this.getView().getModel("i18n").getResourceBundle().getText("NoDataText"),
 				countall: 0,
 				bnew: 0,
 				instock: 0,
 				soldout: 0
 			});
 			this.getView().setModel(oViewModel, "view");
+			
+			
 			//create an object of filters
 			this._mFilters = {
-				"bnew": [ new sap.ui.model.Filter("book>Status", "StartsWith", "N")],
-				"instock": [ new sap.ui.model.Filter("book>Status", "StartsWith","I" )],
-				"soldout": [ new sap.ui.model.Filter("book>Status", "StartsWith", "S")],
-				"countall": []
+				"bnew": [ new sap.ui.model.Filter("Books/Status", "StartsWith", "N")],
+				"instock": [ new sap.ui.model.Filter("Books/Status", "StartsWith","I" )],
+				"soldout": [ new sap.ui.model.Filter("Books/Status", "StartsWith", "S")],
+				"all": []
 			};
 		},
 		onUpdateFinished: function(oEvent){
-			var oViewModel = this.getView().getModel("view");
-				//Get the count for all the books and set the value to 'countall' property
-			if(oViewModel){
-				this.getView().getModel().read("/Books/$count", {
+			var sTitle,
+			oTable = oEvent.getSource(),
+			oViewModel = this.getView().getModel("view"),
+			iTotalItems = oEvent.getParameter("total");
+			
+			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+			
+			if(iTotalItems && oTable.getBinding("items").isLengthFinal()) {
+				sTitle = oResourceBundle.getText("bookCount", [iTotalItems]);
+				
+				//Get the count for all the books and set the value to 'countall' property		
+				this.getView().getModel().getProperty("book>/Books" + "/$count", {
 		         success: function (oData) {
 		            oViewModel.setProperty("/countall", oData);
 		         }
 		      });
 		      // read the count for the New filter
-		      this.getModel().read("/Books/$count", {
+		      this.getView().getModel().getProperty("{book>/Books}" + "/$count", {
 		         success: function (oData) {
 		            oViewModel.setProperty("/bnew", oData);
 		         },
 		         filters: this._mFilters.bnew
 		      });
 		      // read the count for the inStock filter
-		      this.getModel().read("/Books/$count", {
+		      this.getView().getModel().getProperty("book>/Books" + "/$count", {
 		         success: function(oData){
 		            oViewModel.setProperty("/instock", oData);
 		         },
 		         filters: this._mFilters.instock
 		      });  
 		      // read the count for the soldout filter
-		      this.getModel().read("/Books/$count", { 
+		      this.getView().getModel().getProperty("book>/Books" + "/$count", { 
 		         success: function(oData){
 		            oViewModel.setProperty("/soldout", oData);
 		         },
 		         filters: this._mFilters.soldout
 		      }); 
 			}
-		},
-		onQuickFilter: function(oEvent){
-
-			var oBinding = this._oTable.getBinding("items"),
-			sKey = oEvent.getParameter("selectedKey");
-			oBinding.filter(this._mFilters[sKey]);
-		},
+			// } else {
+			// 	sTitle = oResourceBundle().getText("bookListTitle");
+			// }
+			this.getView().getModel("view").setProperty("/bookListTitle", sTitle);
+		}
+		,
 		onFilterBooks: function (oEvent) {
 			//build filter array
 			var aFilter = [];
@@ -87,6 +103,12 @@ sap.ui.define([
 			oRouter.navTo("detail", {
 				bookPath: encodeURIComponent(oItem.getBindingContext("book").getPath().substr(1))          
 			});
+		},
+		onQuickFilter: function(oEvent){
+
+			var oBinding = this._oTable.getBinding("items"),
+				sKey = oEvent.getParameter("selectedKey");
+			oBinding.filter(this._mFilters[sKey]);
 		}
 	});
 });
