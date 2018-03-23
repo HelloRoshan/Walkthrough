@@ -28,6 +28,15 @@
     		"name": "northwind"
     	},
     	"description": "Northwind OData Service"
+    },
+    {
+    	"path": "/Walkthrough/OData/",
+    	"target": {
+    		"type": "destination",
+    		"name": "Walkthrough",
+    		"entryPath": "/Walkthrough/OData"
+    	},
+    	"description": "Walkthrough"
     }
   ],
   "sendWelcomeFileRedirect": true

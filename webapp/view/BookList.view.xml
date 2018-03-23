@@ -7,32 +7,32 @@
 		select="onQuickFilter"
 		expandable="false"
 		applyContentPadding="false">
-		<items>
-			<IconTabFilter
-						key="countall"
-						showAll="true"
-						count="{view>/countall}"
-						text="{i18n>FilterBooksAll}"/>
-					<IconTabSeparator/>
-					<IconTabFilter
-						key="bnew"
-						icon="sap-icon://message-success"
-						iconColor="Positive"
-						count="{view>/bnew}"
-						text="{i18n>FilterNew}"/>
-					<IconTabFilter
-						key="instock"
-						icon="sap-icon://message-information"
-						iconColor="Positive"
-						count="{view>/instock}"
-						text="{i18n>FilterInStock}"/>
-					<IconTabFilter
-						key="soldout"
-						icon="sap-icon://message-error"
-						iconColor="Negative"
-						count="{view>/soldout}"
-						text="{i18n>FilterSoldOut}"/>
-		</items>
+		<!--<items>-->
+		<!--	<IconTabFilter-->
+		<!--				key="countall"-->
+		<!--				showAll="true"-->
+		<!--				count="{view>/countall}"-->
+		<!--				text="{i18n>FilterBooksAll}"/>-->
+		<!--			<IconTabSeparator/>-->
+		<!--			<IconTabFilter-->
+		<!--				key="bnew"-->
+		<!--				icon="sap-icon://message-success"-->
+		<!--				iconColor="Positive"-->
+		<!--				count="{view>/bnew}"-->
+		<!--				text="{i18n>FilterNew}"/>-->
+		<!--			<IconTabFilter-->
+		<!--				key="instock"-->
+		<!--				icon="sap-icon://message-information"-->
+		<!--				iconColor="Positive"-->
+		<!--				count="{view>/instock}"-->
+		<!--				text="{i18n>FilterInStock}"/>-->
+		<!--			<IconTabFilter-->
+		<!--				key="soldout"-->
+		<!--				icon="sap-icon://message-error"-->
+		<!--				iconColor="Negative"-->
+		<!--				count="{view>/soldout}"-->
+		<!--				text="{i18n>FilterSoldOut}"/>-->
+		<!--</items>-->
 		<content>
 			<Table
 				id="bookList"

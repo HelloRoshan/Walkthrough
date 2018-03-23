@@ -3,8 +3,9 @@ sap.ui.define([], function() {
 	
 	return {
 		statusText: function(sStatus){
+			var stat = sStatus.trim();
 			var resourceBundle = this.getView().getModel("i18n").getResourceBundle();
-			switch(sStatus) {
+			switch(stat) {
 				case "A":
 					return resourceBundle.getText("bookStatusA");
 				case "B":
@@ -12,7 +13,7 @@ sap.ui.define([], function() {
 				case "C":
 					return resourceBundle.getText("bookStatusC");
 				default:
-					return sStatus;
+					return stat;
 			}
 		}
 	};

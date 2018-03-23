@@ -6,7 +6,7 @@ sap.ui.define([
 		init: function(){
 			//create
 			var oMockServer = new MockServer({
-				rootUri: "/destinations/northwind/V2/Northwind/Northwind.svc/"
+				rootUri: "/Walkthrough/OData/books.xsodata/"
 			});
 			var oUriParameters = jQuery.sap.getUriParameters();
 			//configure

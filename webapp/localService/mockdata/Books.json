@@ -1,4 +1,4 @@
- [
+[
 			    {
 			    	"author": "Jane Austen",
 			    	"country": "United Kingdom",
@@ -94,5 +94,17 @@
 			    	"Status": "B",
 					"cover_link" : "https://www.penguin.co.uk/content/dam/catalogue/pim/editions/428/9780141036144/cover.jpg",
 					"publication": ""
+			    },
+			    {
+			    	"author": "Bishnu Kumari Waiba",
+			    	"country": "Nepal",
+			    	"language": "Nepali",
+			    	"pages": 65,
+			    	"title": "Sirish ko Phool",
+			    	"year": 1965,
+			    	"price": 150,
+			    	"Status": "B",
+					"cover_link" : " https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Shirish_ko_Phool.jpg/220px-Shirish_ko_Phool.jpg",
+					"publication": "Sajha Prakashan"
 			    }
 		]
